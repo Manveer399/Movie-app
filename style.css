@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&family=Lato:wght@300&display=swap');
+
 *,
 *::after,
 *::before {
@@ -7,6 +9,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Josefin Sans, sans-serif;
 }
 
 header {
@@ -14,40 +17,46 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 header .search {
-  margin-right: 100px;
+  margin-right: 50px;
+  padding: 10px;
+  min-width: 50px;
   outline: none;
   border-style: none;
-  border-radius: 10px;
+  border-radius: 50px;
   text-align: center;
-  height: 25px;
   font-weight: 900;
+}
+
+header .search:focus {
+  outline: 3px solid rgb(124, 91, 91);
 }
 .main {
   background-color: rgb(71, 70, 70);
-  height: auto;
+  min-height: 100vh;
 }
 
 .main-container {
-  max-width: 1800px;
   padding: 50px 50px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
   gap: 20px;
 }
 
 .movie-card {
+  position: relative;
   width: 300px;
   box-shadow: 0px 5px 11px -1px rgba(0, 0, 0, 0.54);
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .movie-card img {
@@ -57,16 +66,56 @@ header .search {
 }
 
 .movie-info {
-  height: 100%;
   background-color: black;
+  height: 100%;
   color: white;
-  padding: 0 15px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.movie-info .movie-title {
+  font-weight: 500;
+  margin: 0;
+}
+
 .movie-info .rating {
   padding: 5px;
+  font-weight: 600;
   background-color: rgb(35, 35, 35);
+}
+
+.rating.red {
+  color: red;
+}
+
+.rating.green {
+  color: green;
+}
+
+.rating.orange {
+  color: orange;
+}
+
+.overview {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: -1px;
+  text-align: justify;
+  padding: 2rem;
+  background-color: rgb(96, 112, 129);
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in;
+}
+
+.movie-card:hover .overview {
+  transform: translateY(0);
+}
+
+.movie-card .overview h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
 }

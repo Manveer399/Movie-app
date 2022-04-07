@@ -14,7 +14,7 @@
   </head>
   <body>
     <header class="header">
-      <form class="form">
+      <form class="form" id="form">
         <input
           type="text"
           name="search"
@@ -28,22 +28,22 @@
 
     <main class="main">
       <div class="main-container">
-        <div class="movie-card">
-          <img src="./img/Doctor_Strange.jpg" alt="" />
-          <div class="movie-info">
-            <h3 class="movie-title">Doctor Strange</h1>
-            <span class="rating">4.5</span>
-          </div>
-        </div>
       </div>
     </main>
+
     <template id="task-template">
       <div class="movie-card">
           <img src="" alt="" />
           <div class="movie-info">
             <h3 class="movie-title"></h1>
             <span class="rating"></span>
+             <div class="overview">
+               <h4>Overview:</h4>
+               <div class="overview-details"></div>
+             </div>
+          
           </div>
+         
       </div>
     </template>
   </body>
